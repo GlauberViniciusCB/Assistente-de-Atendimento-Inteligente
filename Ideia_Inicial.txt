@@ -1,0 +1,76 @@
+💡 Ideia: Assistente de Atendimento Inteligente para Pequenos Negócios
+✨ Descrição:
+
+Um sistema web que permite que pequenos negócios (como lojas, cafés, barbearias, etc.) criem um assistente virtual simples que responde perguntas frequentes dos clientes, como:
+
+Horário de funcionamento
+
+Localização
+
+Produtos/serviços oferecidos
+
+Políticas (entrega, cancelamento, etc.)
+
+⚙️ Arquitetura Simples com LLM:
+1. Frontend (Cliente)
+
+Interface web simples (React, Vue ou HTML + JS)
+
+Formulário para o usuário perguntar algo
+
+Exibe a resposta do assistente
+
+2. Backend (API)
+
+Express (Node.js), Flask (Python) ou outro framework leve
+
+Rota para receber a pergunta do cliente e retornar a resposta gerada
+
+3. LLM Layer
+
+Pode usar:
+
+API do OpenAI (ex: GPT-4 Turbo)
+
+Mistral, LLaMA ou outra open-source com transformers + llama.cpp ou ollama (rodando local)
+
+O prompt seria estruturado com as informações da empresa e a pergunta do usuário
+
+Você é um assistente virtual para o negócio "{{nome_do_negócio}}".
+Informações:
+- Horário: {{horario}}
+- Endereço: {{endereco}}
+- Serviços: {{servicos}}
+
+Pergunta do cliente: "{{pergunta}}"
+Responda de forma clara e simpática.
+
+🗃️ Banco de Dados (Opcional, mas útil)
+
+SQLite ou Firebase (se quiser algo simples)
+
+Armazena as informações da empresa (nome, horário, serviços, etc.)
+
+🧠 LLM como motor principal
+
+Ele serve como o motor de geração de resposta contextual
+
+Opcional: usar embeddings + RAG para perguntas mais abertas (com langchain, llamaindex, etc.)
+
+🔒 Extras que você pode adicionar:
+
+Login para donos de negócio editarem informações
+
+Histórico de conversas
+
+Treinamento com perguntas personalizadas
+
+Chat com voz usando TTS e STT (Speech-to-Text)
+
+✅ Vantagens:
+
+Projeto pequeno, mas demonstra conhecimento em integração com LLM
+
+Fácil de escalar (você pode adicionar suporte a múltiplas empresas)
+
+Útil no mundo real (atendimento básico automatizado)
