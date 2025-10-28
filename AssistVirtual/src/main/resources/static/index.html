@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
     <title> Assistente de Atendimento Inteligente para Pequenos Negócios</title>
 </head>
 <body>
     <div id="containerMain">
-        
+        <div class="login"> 
+            <div id="fechar">X</div>
+           <form action="">
+                <input type="email" id="emailLoginUsuario"  placeholder="Email">
+                <input type="password" name="" id="senha" placeholder="Senha">
+                <div class="areabtn">
+                    <input  type="button" value="Entrar" onclick="login()">
+                    <input  type="button" value="Cadastrar" onclick="cadastrar()">
+                </div>
+           </form>
+       </div>
     </div>
+    
+    <script src="JS/script.js"></script>
 </body>
 </html>

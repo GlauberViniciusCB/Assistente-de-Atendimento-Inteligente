@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor_1: #a43434;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;    
+}
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 400px;
+}
+
+.tabs{
+    position: relative;
+    width: 80px;
+    padding: 40px 0;
+}
+.tabs input{
+    appearance: none;
+    display: none;
+}
+
+.tabs .icones{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs .icones label{
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 2rem;
+    color: #fff;
+    opacity: 0.25;
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 2;
+    /* background: #fff5; */
+}
+
+.tabs input:nth-child(1):checked ~ .icones label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .icones label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .icones label:nth-child(3),
+.tabs input:nth-child(4):checked ~ .icones label:nth-child(4)
+{
+    opacity: 1;
+}
+
+
+.indicador{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: var(--cor_1);
+    z-index: 1;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transition: 0.5s;
+}
+
+.indicador::before{
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-bottom-right-radius: 20px;
+    box-shadow: 8px 8px 0px 8px var(--cor_1);
+}
+
+.indicador::after{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 8px -8px 0px 8px var(--cor_1);
+}
+
+.tabs input:nth-child(1):checked ~ .icones .indicador{
+    top: 0;
+}
+.tabs input:nth-child(2):checked ~ .icones .indicador{
+    top: 25%;
+}
+.tabs input:nth-child(3):checked ~ .icones .indicador{
+    top: 50%;
+}
+.tabs input:nth-child(4):checked ~ .icones .indicador{
+    top: 75%;
+}
+
+.conteudo{
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 520px;
+    height: 400px;
+    background: linear-gradient(90deg,var(--cor_1),#df0d54);
+    border-radius: 20px;
+}
+
+.conteudo .conteudoBox{
+    position: absolute;
+    inset: 0;
+    padding: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+.tabs input:nth-child(1):checked ~ .conteudo .conteudoBox:nth-child(1),
+.tabs input:nth-child(2):checked ~ .conteudo .conteudoBox:nth-child(2),
+.tabs input:nth-child(3):checked ~ .conteudo .conteudoBox:nth-child(3),
+.tabs input:nth-child(4):checked ~ .conteudo .conteudoBox:nth-child(4)
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container .conteudoBox h2,
+.container .conteudoBox p{
+    color: #fff;
+    padding: 10px;
+}
